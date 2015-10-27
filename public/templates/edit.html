@@ -1,0 +1,60 @@
+<h2>View Or Edit</h2>
+<div ng-controller="EditController">
+	<form name="editform" class="form-horizontal">
+	 <div class="form-group">
+	    <label for="id" class="col-sm-2 control-label">Id</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="id" name="id" placeholder="Id" ng-disabled="myDisabled" ng-model="user.id"  >
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="name" class="col-sm-2 control-label">Your Name</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="name"  name="name" ng-model="user.name"  ng-disabled="myDisabled" placeholder="Your Name">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="sex" class="col-sm-2 control-label">Sex</label>
+	    <div class="col-sm-10">
+	    	<label class="radio-inline">
+			  <input type="radio" name="sex"  ng-model="user.sex"  ng-disabled="myDisabled" value="male">Male
+			</label>
+			<label class="radio-inline">
+			  <input type="radio" name="sex"  ng-model="user.sex"  ng-disabled="myDisabled" value="female">Female
+			</label>
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="location" class="col-sm-2 control-label">Location</label>
+	    <div class="col-sm-10">
+	    <select id="location" class="form-control" ng-model="user.location" ng-disabled="myDisabled"  ng-options=" loc.value as loc.name for loc in loVal">
+		</select>
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label  class="col-sm-2 control-label">hobby</label>
+	      <div class="col-sm-10">
+	      	<label class="checkbox-inline">
+			  <input type="checkbox" name="hobby"  ng-model="hobby1" ng-disabled="myDisabled"  id="hobby1" > game
+			</label>
+			<label class="checkbox-inline">
+			  <input type="checkbox" name="hobby" ng-model="hobby2" ng-disabled="myDisabled" id="hobby2" > football
+			</label>
+			<label class="checkbox-inline">
+			  <input type="checkbox" name="hobby" ng-model="hobby3"  ng-disabled="myDisabled" id="hobby3" > travel
+			</label>
+			<label class="checkbox-inline">
+			  <input type="checkbox" name="hobby"  ng-model="hobby4"  ng-disabled="myDisabled" id="hobby4" > muzzy
+			</label>
+	      </div>
+	    
+		</div>
+	  <div class="form-group">
+	    <div class="col-sm-offset-2 col-sm-10">
+	      <button type="submit" class="btn btn-primary" ng-disabled="myDisabled" ng-click="submit()">Submit</button>
+	      <button type="submit" class="btn btn-danger" ng-click="back()">Cancel</button>
+	    </div>
+	  </div>
+	</form>
+<pre>{{user |json}}</pre>
+</div>
