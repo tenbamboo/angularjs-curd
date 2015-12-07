@@ -15,3 +15,5 @@ angularjs curd
 
 
 4.安装好之后 键入 node app.js
+
+5.test request auth
